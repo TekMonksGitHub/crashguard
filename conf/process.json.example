@@ -1,3 +1,4 @@
-{
-    "process": ["c:\\Program Files\\nodejs\\node.exe","C:\\Users\\user\\source\\reflection-tcp\\reflect_tcp.js"]
-}
+[
+    {"process": ["c:\\Program Files\\nodejs\\node.exe","C:\\Users\\user\\source\\mycode\\process1.js"]},
+    {"process": ["c:\\Program Files\\nodejs\\node.exe","C:\\Users\\user\\source\\mycode\\process2.js"]}
+]
