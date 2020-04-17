@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-/* 
+/*
  * crashguard.js, Runs local shell scripts or commands as servers
- * 
+ *
  * (C) 2020 TekMonks. All rights reserved.
  */
 const spawn = require("child_process").spawn;
@@ -21,14 +21,15 @@ function main() {
 }
 
 function spawnArgs(args, callback) {
-    const process = args.splice(0,1)[0]; 
-    const shellProcess = spawn(process, args);
+    const processChild = args.splice(0,1)[0];
+    const shellProcess = spawn(processChild, args);
+    if (!shellProcess || !shellProcess.stdout || !shellProcess.stderr) {console.error(`Can't launch ${processChild} ${args}, exiting.`); process.exit(1);}
     shellProcess.stdout.on("data", data => console.log(data.toString("utf8")));
 
     shellProcess.stderr.on("data", data => console.error(data.toString("utf8")));
 
     shellProcess.on("exit", _ => {
-        console.error(`[CRASHGUARD] Process ${[process,...args]} exited, restarting.`);
-        callback([process,...args]);
+        console.error(`[CRASHGUARD] Process ${[processChild,...args]} exited, restarting.`);
+        callback([processChild,...args]);
     });
 }
