@@ -13,4 +13,4 @@ See `conf/process.json.example` for an example and rename it as `process.json`.
 If conf file is used, then command line arguments are ignored.
 
 # Why?
-If a utility has to be a reliable processes, it must be very simple. Crashguard is made to be as simple as possible to avoid as many bugs as possible. Thus, it can be a good "crash guard". Writing complicated process monitors doesn't make sense, as they themselves may just crash, if they are complex, due to unforeseen bugs. 
+If a utility has to be a reliable process, it must be very simple. Crashguard is made to be as simple as possible to avoid as many bugs as possible. Thus, it can be a good "crash guard". Writing complicated process monitors doesn't make sense, as they themselves may just crash, if they are complex, due to unforeseen bugs. 
